@@ -33,7 +33,7 @@
 #include <psapi.h>
 #include <dbghelp.h>
 #include <tlhelp32.h>
-#include "injector.h"
+#include "../../include/injector.h"
 
 #pragma comment(lib, "advapi32.lib")
 #pragma comment(lib, "dbghelp.lib")

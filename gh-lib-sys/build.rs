@@ -2,12 +2,17 @@ extern crate bindgen;
 use std::env;
 use std::path::PathBuf;
 use bindgen::RustTarget;
+use std::process::Command;
 
 pub fn main(){
     let out_dir = env::var("OUT_DIR").unwrap();
 
+    Command::new("cmake").arg("../").current_dir("injector/build").status().unwrap();
+    Command::new("cmake").args(["--build", "."]).current_dir("injector/build").status().unwrap();
+    
+    std::fs::copy("injector/build/Debug/STATIC.lib", &format!("{}/{}", out_dir, "injector-static.lib")).unwrap();
     println!("cargo:rustc-link-search=native={}", out_dir);
-    println!("cargo:rustc-link-lib=static=injector-static.lib");
+    println!("cargo:rustc-link-lib=static=injector-static");
     println!("cargo:rerun-if-changed=build.rs");
     let bindings = bindgen::Builder::default()
         .header("injector/include/injector.h")
