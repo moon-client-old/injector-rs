@@ -39,6 +39,6 @@ pub fn inject_library(pid: u32, path_to_lib: &str) -> Result<(), InjectorError> 
 
 #[test]
 pub fn test_injection(){
-   let lib = "C:/Users/matth/Desktop/FantaDecryptor.dll";
+   let lib = "testDLL.dll";
    let result = inject_library(21576, lib).unwrap();
 }
