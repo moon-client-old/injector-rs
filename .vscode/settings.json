@@ -1,0 +1,10 @@
+{
+    "rust.rust-analyzer.cargo.loadOutDirsFromCheck": true
+"rust-analyzer.cargo.loadOutDirsFromCheck": true
+"rust-analyzer.cargo": {
+	"loadOutDirsFromCheck": true
+}
+"rust.rust-analyzer.cargo": {
+	"loadOutDirsFromCheck": true
+}
+}
