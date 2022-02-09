@@ -1,17 +1,20 @@
 [package]
-name = "injector-rs"
+name = "injector-sys"
 version = "0.1.0"
 edition = '2021'
 rust-version = "1.56"
 license = "MIT"
 homepage = "https://moonclient.xyz/"
-documentation = "https://docs.rs/injector-rs/"
+documentation = "https://docs.rs/injector-sys/"
 repository = "https://github.com/moon-client/injector-rs"
-description = "Rust bindings to an injector library"
+description = "low level rust bindings to an injector library"
 readme = "README.md"
-keywords = ["injection", "dll-injection"]
+build = "build.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
-gh-lib-sys = "0.1.0"
-thiserror = "1.0.30"
+[lib]
+path = "lib.rs"
+
+
+[build-dependencies]
+bindgen = "*"
