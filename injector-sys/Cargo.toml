@@ -17,4 +17,4 @@ path = "lib.rs"
 
 
 [build-dependencies]
-bindgen = "*"
+bindgen = "0.59.2"
