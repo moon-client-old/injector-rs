@@ -7,7 +7,7 @@ use std::process::Command;
 pub fn main(){
     let out_dir = env::var("OUT_DIR").unwrap();
 
-    std::fs::create_dir("injector/build").unwrap();
+    std::fs::create_dir_all("injector/build").unwrap();
     Command::new("cmake").arg("../").current_dir("injector/build").status().unwrap();
     Command::new("cmake").args(["--build", "."]).current_dir("injector/build").status().unwrap();
     
